@@ -1,0 +1,50 @@
+.pageNotFound{
+    img{
+        width: auto;
+        display: block;
+            margin: 4% auto;
+    }
+    h1{
+        font-size: 11rem;
+
+    }
+    h2{
+        font-size: 9rem;
+    }
+    p{
+        font-size: 6rem;
+    }
+    button{
+        cursor: pointer;
+        border: none;
+        font-size: 1.5rem;
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: block;
+        margin: 4% auto;
+        color: white;
+        background: blue;
+    }
+    @media screen and (max-width:775px) {
+        h1{
+            font-size: 6rem;
+        }
+        h2{
+            font-size: 4rem;
+        }
+        p{
+            font-size: 3rem;
+        }
+        button{
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: block;
+            margin: 4% auto;
+            color: white;
+            background: blue;
+        }
+    }
+}

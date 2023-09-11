@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Spinner from '../../components/spinner/Spinner';
 import ContentWrapper from './../../components/contentWrapper/ContentWrapper';
-import noresult from '../../assets/no-results.png';
 import MovieCard from '../../components/movieCard/MovieCard';
+import PageNotFound from '../404/PageNotFound';
 const SearchResult = () => {
     const [ data, setData ] = useState(null);
     const [ pageNum, setPageNum ] = useState(1);
@@ -71,7 +71,7 @@ const SearchResult = () => {
                                 </>
                             ) : (
                                 <span className="resultNotFound">
-                                    Sorry, Results Not Found <img src={noresult} alt="No Result" />
+                                    <PageNotFound />
                                 </span>
                             )
                         }
