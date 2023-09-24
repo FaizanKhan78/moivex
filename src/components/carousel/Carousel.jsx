@@ -13,7 +13,6 @@ import Img from "../lazyLoadImage/Img";
 import PosterFallback from "../../assets/no-poster.png";
 import CircleRating from '../circleRating/CircleRating';
 import Genres from './../genres/Genres';
-import Like from './Like';
 
 
 const Carousel = ({ title, data, loading, endpoint }) => {
@@ -66,8 +65,8 @@ const Carousel = ({ title, data, loading, endpoint }) => {
                         {data?.map((item) => {
                             const posterUrl = item.poster_path ? url.poster + item.poster_path : PosterFallback;
                             return (
-                                <div key={item.id} className="carouselItem">
-                                    <div className="posterBlock" onClick={() => navigate(`/${item.media_type || endpoint}/${item.id}`)}>
+                                <div key={item.id} className="carouselItem" onClick={() => navigate(`/${item.media_type || endpoint}/${item.id}`)}>
+                                    <div className="posterBlock" >
                                         <Img src={posterUrl} />
                                         <CircleRating rating={item.vote_average.toFixed(1)} />
                                         <Genres data={item.genre_ids.slice(0, 2)} />
@@ -78,9 +77,6 @@ const Carousel = ({ title, data, loading, endpoint }) => {
                                         </span>
                                         <span className="date">
                                             {dayjs(data.release_date).format("MMM D, YYYY")}
-                                        </span>
-                                        <span className="like">
-                                            <Like />
                                         </span>
                                     </div>
                                 </div>
